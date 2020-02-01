@@ -29,13 +29,13 @@ namespace ConsoleAdventure.Project
       Messages.Add(new string("The Following Exits:"));
       foreach (var exit in _game.CurrentRoom.Exits)
       {
-        Messages.Add(new string($"{_game.CurrentRoom.Exits}"));
+        Messages.Add(new string($"{exit.Key}"));
       }
       Messages.Add(new string($"There are no exits in this room\n"));
       Messages.Add(new string($"Available Items:"));
       foreach (var items in _game.CurrentRoom.Items)
       {
-        Messages.Add(new string($"{_game.CurrentRoom.Items}"));
+        Messages.Add(new string($"{items.Name}"));
       }
       Messages.Add(new string($"There are no items in this room\n"));
     }
@@ -62,6 +62,7 @@ namespace ConsoleAdventure.Project
       throw new System.NotImplementedException();
     }
 
+    //NOTE Still confused on the setup. I know it takes in a playerName, but is there a better way to go about it?
     public void Setup(string playerName)
     {
       playerName = "Link";
