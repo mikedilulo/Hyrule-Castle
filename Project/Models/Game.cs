@@ -20,7 +20,7 @@ namespace ConsoleAdventure.Project.Models
 
       Room captainsQuarters = new Room("Captains-Quarters", "When you enter into the Captain's Quarters you realize that this room is filled with luxurious knock off treasure that has been taken from the townsfolk. This has made you sick to your stomach. Now the motivation is really fueling to rid of the corruption to bring peace to their lives. You look around the room, searching and searching for any clues or information. The sword you are wielding over your back is slowly starting to turn a light blue color. Could this be magic? You must be getting closer to something..");
 
-      Room guardRoom = new Room("Guard-Room", "As you slowly approached the Guard Room eluding all the guards that are working the shift. You realize that this room is completely pitch black, maybe an item would reveal more about the room if you could use it.");
+      Room guardRoom = new Room("Guard-Room", "As you slowly approached the Guard Room eluding all the guards that are working the shift. You realize that this room is completely pitch black now that you are inside. If you were to turn on the lights, you might expose yourself. There must be another way to search around the room and take a look without alarming everybody.");
 
 
       //NOTE establishes the current Room the character is in.
