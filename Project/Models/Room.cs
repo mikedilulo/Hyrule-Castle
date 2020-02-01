@@ -3,11 +3,23 @@ using ConsoleAdventure.Project.Interfaces;
 
 namespace ConsoleAdventure.Project.Models
 {
-    public class Room : IRoom
+  public class Room : IRoom
+  {
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public List<Item> Items { get; set; }
+    public Dictionary<string, IRoom> Exits { get; set; }
+
+
+
+    //NOTE Constructor made for the Rooms
+    //TODO Need to add a locked boolean and implement that into the game
+    public Room(string name, string description)
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public List<Item> Items { get; set; }
-        public Dictionary<string, IRoom> Exits { get; set; }
+      Name = name;
+      Description = description;
+      Items = new List<Item>();
+      Exits = new Dictionary<string, IRoom>();
     }
+  }
 }
