@@ -91,7 +91,7 @@ namespace ConsoleAdventure.Project
     ///</summary>
     public void UseItem(string itemName)
     {
-      throw new System.NotImplementedException();
+
     }
   }
 }
