@@ -35,7 +35,7 @@ namespace ConsoleAdventure.Project
 
     public void Look()
     {
-      throw new System.NotImplementedException();
+      Messages.Add(new string($"{_game.CurrentRoom.Description}"));
     }
 
     ///<summary>

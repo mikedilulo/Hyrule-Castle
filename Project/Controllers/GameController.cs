@@ -41,6 +41,13 @@ namespace ConsoleAdventure.Project.Controllers
       //NOTE this will take the user input and parse it into a command and option.
       //IE: take silver key => command = "take" option = "silver key"
 
+      switch (command)
+      {
+        case "look":
+          _gameService.Look();
+          break;
+      }
+
     }
 
     //NOTE this should print your messages for the game.
