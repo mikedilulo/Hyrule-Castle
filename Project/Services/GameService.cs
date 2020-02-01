@@ -47,7 +47,13 @@ namespace ConsoleAdventure.Project
     }
     public void Help()
     {
-      throw new System.NotImplementedException();
+      Messages.Add(new string("Type quit and hit enter to quit the console application"));
+      Messages.Add(new string("Type go and <direction> to travel into the next room"));
+      Messages.Add(new string("Type take and <item> to take an item from a room"));
+      Messages.Add(new string("Type use and <item to use an item from a room"));
+      Messages.Add(new string("Type look to get a description of the room you are currently in"));
+      Messages.Add(new string("Type reset to reset the game back to the beginning"));
+      Messages.Add(new string("Type inventory to view a list of items in your inventory\n"));
     }
 
     public void Inventory()

@@ -43,11 +43,19 @@ namespace ConsoleAdventure.Project.Controllers
 
       switch (command)
       {
+        case "quit":
+          _adventuring = false;
+          break;
         case "look":
+          Console.Clear();
           _gameService.Look();
           break;
         case "go":
+          Console.Clear();
           _gameService.Go(option);
+          break;
+        case "help":
+          _gameService.Help();
           break;
       }
 
