@@ -27,11 +27,18 @@ namespace ConsoleAdventure.Project
       }
       Messages.Add(new string($"{_game.CurrentRoom.Description}\n"));
       Messages.Add(new string("The Following Exits:"));
+      //   for (int exit = 0; exit < _game.CurrentRoom.Exits.Count; exit++)
+      //   {
+      //     Messages.Add(new string($"{exit.ToString(direction)}"));
+      //   }
+      //   Messages.Add(new string($"There are no exits in this room\n"));
+
       foreach (var exit in _game.CurrentRoom.Exits)
       {
         Messages.Add(new string($"{exit.Key}"));
       }
-      Messages.Add(new string($"There are no exits in this room\n"));
+      Messages.Add(new string($"There are no exits in this room"));
+
       Messages.Add(new string($"Available Items:"));
       foreach (var items in _game.CurrentRoom.Items)
       {
