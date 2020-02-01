@@ -27,8 +27,8 @@ namespace ConsoleAdventure.Project.Models
       CurrentRoom = approachingCastle;
 
       //NOTE Adds items to the game
-      Item key = new Item("Silver-Key", "key that can be used for another room");
-      Item light = new Item("Flash-Light", "A tool used to light up a room");
+      Item key = new Item("silver-key", "key that can be used for another room");
+      Item light = new Item("flash-light", "A tool used to light up a room");
 
       //Adds items to the rooms
       barracks.Items.Add(key);

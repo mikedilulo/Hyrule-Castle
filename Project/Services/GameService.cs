@@ -58,7 +58,7 @@ namespace ConsoleAdventure.Project
 
     public void Inventory()
     {
-      throw new System.NotImplementedException();
+
     }
 
     public void Look()
@@ -82,7 +82,7 @@ namespace ConsoleAdventure.Project
     ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
     public void TakeItem(string itemName)
     {
-      throw new System.NotImplementedException();
+
     }
     ///<summary>
     ///No need to Pass a room since Items can only be used in the CurrentRoom

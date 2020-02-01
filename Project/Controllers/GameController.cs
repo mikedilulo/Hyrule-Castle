@@ -21,7 +21,6 @@ namespace ConsoleAdventure.Project.Controllers
       string name = Console.ReadLine();
       _gameService.Setup(name);
       _gameService.PrintMessages();
-      Console.Clear();
       while (_adventuring)
       {
         Console.Clear();
@@ -56,6 +55,9 @@ namespace ConsoleAdventure.Project.Controllers
           break;
         case "help":
           _gameService.Help();
+          break;
+        case "inventory":
+          _gameService.Inventory();
           break;
       }
 
