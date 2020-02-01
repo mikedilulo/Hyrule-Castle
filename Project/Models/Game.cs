@@ -30,7 +30,6 @@ namespace ConsoleAdventure.Project.Models
 
       //Adds items to the rooms
       barracks.Items.Add(key);
-      barracks.Items.Add(light);
 
       //NOTE establishes the relationships between the rooms
       approachingCastle.Exits.Add("west", runningAway);
