@@ -14,6 +14,8 @@ namespace ConsoleAdventure.Project.Models
 
       Room runningAway = new Room("Run-Away", "You have decided that this adventure was too much for you to handle. You have let down the King, the Princess, and all of Humanity. When you turned around and tried to ride away on Epona, an arrow was shot into the leg of Epona, dropping your horse and you to the ground. When you fell off your mighty horse, your head struck a rock. A nearby Bokoblin has snatched you and took you back to his lair. It was only here your fate was met, you were skinned alive, tortured and killed. The game is over. Maybe next time you might want to consider what can happen to humanity when you decide to make a wrong decision.");
 
+      Room insideCastleWalls = new Room($"Inside-Castle-Walls", "You approach the castle walking inside of the gates with only the sword and shield you have on your back. You {_game.CurrentPlayer.Name} are the only one capable of completing such a daunting task. The castle gate behind you closes, realizing there is no turning back now, you gather your surroundings. To the north, you see an open room, to the south you see a room with the door closed. As you look off in the distance to the East in front of you, you see a large set of double doors. These doors appear to have a lock on them that is glowing from the distance. I wonder where this could lead. Is that maybe where the princess is?");
+
 
       //NOTE establishes the current Room the character is in.
       CurrentRoom = approachingCastle;
@@ -22,6 +24,7 @@ namespace ConsoleAdventure.Project.Models
 
       //NOTE establishes the relationships between the rooms
       approachingCastle.Exits.Add("west", runningAway);
+      approachingCastle.Exits.Add("east", insideCastleWalls);
     }
 
 

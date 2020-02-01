@@ -46,6 +46,9 @@ namespace ConsoleAdventure.Project.Controllers
         case "look":
           _gameService.Look();
           break;
+        case "go":
+          _gameService.Go(option);
+          break;
       }
 
     }

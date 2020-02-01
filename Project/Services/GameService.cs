@@ -21,7 +21,23 @@ namespace ConsoleAdventure.Project
     }
     public void Go(string direction)
     {
-      throw new System.NotImplementedException();
+      if (_game.CurrentRoom.Exits.ContainsKey(direction))
+      {
+        _game.CurrentRoom = _game.CurrentRoom.Exits[direction];
+      }
+      Messages.Add(new string($"{_game.CurrentRoom.Description}\n"));
+      Messages.Add(new string("The Following Exits:"));
+      foreach (var exit in _game.CurrentRoom.Exits)
+      {
+        Messages.Add(new string($"{_game.CurrentRoom.Exits}"));
+      }
+      Messages.Add(new string($"There are no exits in this room\n"));
+      Messages.Add(new string($"Available Items:"));
+      foreach (var items in _game.CurrentRoom.Items)
+      {
+        Messages.Add(new string($"{_game.CurrentRoom.Items}"));
+      }
+      Messages.Add(new string($"There are no items in this room\n"));
     }
     public void Help()
     {
