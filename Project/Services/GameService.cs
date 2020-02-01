@@ -86,6 +86,16 @@ namespace ConsoleAdventure.Project
       {
         Messages.Add(new string($"You have taken {_game.CurrentRoom.Items.Count} items"));
         _game.CurrentRoom.Items.Clear();
+        Messages.Add(new string($"{_game.CurrentRoom.Description}"));
+        Messages.Add(new string("\nAvailable Exits"));
+        foreach (var exit in _game.CurrentRoom.Exits)
+        {
+          Messages.Add(new string($"{exit.Key}"));
+        }
+        if (_game.CurrentRoom.Exits.Count == 0)
+        {
+          Messages.Add(new string($"There are no exits in this room \n"));
+        }
         return;
       }
 
