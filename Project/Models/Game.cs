@@ -18,7 +18,7 @@ namespace ConsoleAdventure.Project.Models
 
       Room barracks = new Room("barracks", "As you slowly creep your way inside of the barracks, you notice that the room is pretty bland. There are bunk beds that look like they haven't been used in years. You see a dresser with some dust on it. In the distance is a window that looks into the yard of the castle. What is this place? Old uniforms are hung up, with a particular uniform folded neatly on a bed. This might be worth checking out. To the south you see the path you just came from, and further looks like another room that is potentially locked.");
 
-      Room captainsQuarters = new Room("Captains-Quarters", "");
+      Room captainsQuarters = new Room("Captains-Quarters", "When you enter into the Captain's Quarters you realize that this room is filled with luxurious knock off treasure that has been taken from the townsfolk. This has made you sick to your stomach. Now the motivation is really fueling to rid of the corruption to bring peace to their lives. You look around the room, searching and searching for any clues or information. The sword you are wielding over your back is slowly starting to turn a light blue color. Could this be magic? You must be getting closer to something..");
 
 
       //NOTE establishes the current Room the character is in.
@@ -30,6 +30,7 @@ namespace ConsoleAdventure.Project.Models
 
       //Adds items to the rooms
       barracks.Items.Add(key);
+      captainsQuarters.Items.Add(light);
 
       //NOTE establishes the relationships between the rooms
       approachingCastle.Exits.Add("west", runningAway);
