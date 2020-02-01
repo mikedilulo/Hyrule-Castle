@@ -37,14 +37,18 @@ namespace ConsoleAdventure.Project
       {
         Messages.Add(new string($"{exit.Key}"));
       }
-      Messages.Add(new string($"There are no exits in this room"));
+      if (_game.CurrentRoom.Exits.Count == 0)
+      {
+        Messages.Add(new string($"There are no exits in this room \n"));
+      }
 
-      Messages.Add(new string($"Available Items:"));
+      Messages.Add(new string($"\nAvailable Items:"));
       foreach (var items in _game.CurrentRoom.Items)
       {
-        Messages.Add(new string($"{items.Name}"));
+        Messages.Add(new string($"{items.Name}\n"));
       }
-      Messages.Add(new string($"There are no items in this room\n"));
+      if (_game.CurrentRoom.Items.Count == 0)
+        Messages.Add(new string($"There are no items in this room\n"));
     }
     public void Help()
     {

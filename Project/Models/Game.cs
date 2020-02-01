@@ -35,6 +35,9 @@ namespace ConsoleAdventure.Project.Models
       approachingCastle.Exits.Add("east", insideCastleWalls);
 
       insideCastleWalls.Exits.Add("north", barracks);
+      insideCastleWalls.Exits.Add("south", captainsQuarters);
+
+      barracks.Exits.Add("south", insideCastleWalls);
 
 
     }
