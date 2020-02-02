@@ -7,9 +7,10 @@ namespace ConsoleAdventure.Project.Interfaces
   {
     string Name { get; set; }
     string Description { get; set; }
+
+    public bool Light { get; set; }
     List<Item> Items { get; set; }
     Dictionary<string, IRoom> Exits { get; set; }
 
-    //TODO Need to add the locked boolean on this to satisfy the interfaces
   }
 }

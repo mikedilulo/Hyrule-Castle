@@ -28,6 +28,7 @@ namespace ConsoleAdventure.Project
       Messages.Add(new string($"{_game.CurrentRoom.Description}\n"));
       Messages.Add(new string("The Following Exits:"));
 
+
       foreach (var exit in _game.CurrentRoom.Exits)
       {
         Messages.Add(new string($"{exit.Key}"));
@@ -58,7 +59,7 @@ namespace ConsoleAdventure.Project
 
     public void Inventory()
     {
-
+      Messages.Add(new string("-----Inventory-----"));
     }
 
     public void Look()
@@ -99,8 +100,6 @@ namespace ConsoleAdventure.Project
         return;
       }
       _game.CurrentPlayer.Inventory.Add(_game.CurrentRoom.Items[0]);
-
-
     }
     ///<summary>
     ///No need to Pass a room since Items can only be used in the CurrentRoom
@@ -109,7 +108,10 @@ namespace ConsoleAdventure.Project
     ///</summary>
     public void UseItem(string itemName)
     {
-
+      if (_game.CurrentRoom.Light == true)
+      {
+        Messages.Add(new string($"Using {itemName} lights up the room and you see a mysterious trap door to the north that will need to have some sort of key to open it. You're sword is beaming now, you are getting closer to finding the Princess!"));
+      }
     }
   }
 }
