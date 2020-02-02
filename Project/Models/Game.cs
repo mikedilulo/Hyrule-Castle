@@ -30,6 +30,10 @@ namespace ConsoleAdventure.Project.Models
 
       Room council = new Room("Council-Room", "You poke your head into the Council Room as you hear some faint whispering. Its the weird bald dude who knows everything from Game of Thrones! He tells you that your destiny and rescue is in the Throne Room. Do you really trust this guy? To the south takes you back to the base of the tower.", true);
 
+      Room throne = new Room("Throne Room", "Here lies the room where the Princess is. She gives you a big hug and thanks you for saving her. She has been so sick and so worried about her family. You do know that you will come back to avenge Ganon and finish him off for good. To the East within the room, you see a portal start to form. I think its about time to make the great escape.", true);
+
+      Room completion = new Room("Completion", "You and the Princess jump through the portal and end up back in front of the castle where it all started. Everybody from the village has come out to cheer you on. Congratulations brave adventurer, you have completed your quest in saving the princess. There will be more to the game coming soon. Make sure you come back for more adventure in the future", true);
+
 
       //NOTE establishes the current Room the character is in.
       CurrentRoom = approachingCastle;
@@ -59,11 +63,16 @@ namespace ConsoleAdventure.Project.Models
       courtyard.Exits.Add("east", guardRoom);
 
       hallway.Exits.Add("east", squire);
+      hallway.Exits.Add("north", throne);
 
       squire.Exits.Add("north", council);
       squire.Exits.Add("west", hallway);
 
       council.Exits.Add("south", squire);
+
+      throne.Exits.Add("east", completion);
+
+
     }
 
 
