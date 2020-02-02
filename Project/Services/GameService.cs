@@ -98,6 +98,7 @@ namespace ConsoleAdventure.Project
         }
         return;
       }
+      _game.CurrentPlayer.Inventory.Add(_game.CurrentRoom.Items[0]);
 
 
     }
