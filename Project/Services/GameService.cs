@@ -60,6 +60,14 @@ namespace ConsoleAdventure.Project
     public void Inventory()
     {
       Messages.Add(new string("-----Inventory-----"));
+      // for (int item = 0; item < _game.CurrentPlayer.Inventory.Count; item++)
+      // {
+      //   Messages.Add(new string($"{item.ToString("name")}"));
+      // }
+      foreach (var item in _game.CurrentPlayer.Inventory)
+      {
+        System.Console.WriteLine($"{item.Name}");
+      }
     }
 
     public void Look()
@@ -72,7 +80,9 @@ namespace ConsoleAdventure.Project
     ///</summary>
     public void Reset()
     {
-      throw new System.NotImplementedException();
+      _game.CurrentRoom.Items.Clear();
+      _game.CurrentPlayer.Inventory.Clear();
+      _game.Setup();
     }
 
     //NOTE Still confused on the setup. I know it takes in a playerName, but is there a better way to go about it?
