@@ -22,6 +22,8 @@ namespace ConsoleAdventure.Project.Models
 
       Room guardRoom = new Room("Guard-Room", "As you slowly approached the Guard Room eluding all the guards that are working the shift. You realize that this room is completely pitch black now that you are inside. If you were to turn on the lights, you might expose yourself. There must be another way to search around the room and take a look without alarming everybody.", true);
 
+      Room courtyard = new Room("Courtyard", "You have tip toed back to the opening of the courtyard, you look inside and notice that all the guard are all passed out. You see fresh tracks of a guard that has left the courtyard to go talk to Ganon. To your north, you see the Throne Room. This room may just contain the princess after all. Now you hear the voice 'Brave Adventurer, I am here.. help me please'. Hearing that has motivated you in knowing that you finally hear this voice that you have been hearing all along. It is time to move forward and go save the princess", true);
+
 
       //NOTE establishes the current Room the character is in.
       CurrentRoom = approachingCastle;
@@ -44,6 +46,8 @@ namespace ConsoleAdventure.Project.Models
 
       captainsQuarters.Exits.Add("north", insideCastleWalls);
       captainsQuarters.Exits.Add("east", guardRoom);
+
+      guardRoom.Exits.Add("west", courtyard);
 
 
     }
