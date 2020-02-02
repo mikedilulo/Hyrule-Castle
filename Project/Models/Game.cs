@@ -28,6 +28,8 @@ namespace ConsoleAdventure.Project.Models
 
       Room squire = new Room("Squire Tower", "You climb up to the top of the tower to see if you can get a good insight from the crows next about the situation outside once you grab the princess. You do not see a person in sight. There must have been a big party tonight as all the guards are still passed out in the courtyard.", true);
 
+      Room council = new Room("Council-Room", "You poke your head into the Council Room as you hear some faint whispering. Its the weird bald dude who knows everything from Game of Thrones! He tells you that your destiny and rescue is in the Throne Room. Do you really trust this guy? To the south takes you back to the base of the tower.", true);
+
 
       //NOTE establishes the current Room the character is in.
       CurrentRoom = approachingCastle;
@@ -58,6 +60,10 @@ namespace ConsoleAdventure.Project.Models
 
       hallway.Exits.Add("east", squire);
 
+      squire.Exits.Add("north", council);
+      squire.Exits.Add("west", hallway);
+
+      council.Exits.Add("south", squire);
     }
 
 
