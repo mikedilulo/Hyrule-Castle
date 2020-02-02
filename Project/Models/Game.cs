@@ -24,6 +24,10 @@ namespace ConsoleAdventure.Project.Models
 
       Room courtyard = new Room("Courtyard", "You have tip toed back to the opening of the courtyard, you look inside and notice that all the guard are all passed out. You see fresh tracks of a guard that has left the courtyard to go talk to Ganon. To your north, you see the Throne Room. This room may just contain the princess after all. Now you hear the voice 'Brave Adventurer, I am here.. help me please'. Hearing that has motivated you in knowing that you finally hear this voice that you have been hearing all along. It is time to move forward and go save the princess", true);
 
+      Room hallway = new Room("Hallway", "As you move further along in the adventure you see this mysterious hallway that leads to the Throne Room. This hallway contains pictures of the princess and the royal family before the corruption happened. You still hear the voices in your head about saving this princess. To your East you see a short hallway with one room. This might be worth checking out. If you treck down the hallway towards the Throne Room it may be a trap. Always better to be extra precautious.", true);
+
+      Room squire = new Room("Squire Tower", "You climb up to the top of the tower to see if you can get a good insight from the crows next about the situation outside once you grab the princess. You do not see a person in sight. There must have been a big party tonight as all the guards are still passed out in the courtyard.", true);
+
 
       //NOTE establishes the current Room the character is in.
       CurrentRoom = approachingCastle;
@@ -49,6 +53,10 @@ namespace ConsoleAdventure.Project.Models
 
       guardRoom.Exits.Add("west", courtyard);
 
+      courtyard.Exits.Add("north", hallway);
+      courtyard.Exits.Add("east", guardRoom);
+
+      hallway.Exits.Add("east", squire);
 
     }
 
