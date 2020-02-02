@@ -81,7 +81,6 @@ namespace ConsoleAdventure.Project
     public void Reset()
     {
       _game.CurrentRoom.Items.Clear();
-      _game.CurrentPlayer.Inventory.Clear();
       _game.Setup();
     }
 
