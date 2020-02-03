@@ -90,27 +90,30 @@ namespace ConsoleAdventure.Project
     //NOTE Still confused on the setup. I know it takes in a playerName, but is there a better way to go about it?
     public void Setup(string playerName)
     {
-      playerName = "Link";
+      _game.CurrentPlayer.Name = playerName;
     }
     ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
     public void TakeItem(string itemName)
     {
-      if (_game.CurrentRoom.Items[0].Name == itemName)
+      for (int i = 0; i < _game.CurrentRoom.Items.Count; i++)
       {
-        Messages.Add(new string($"You have taken {_game.CurrentRoom.Items.Count} items"));
-        _game.CurrentPlayer.Inventory.Add(_game.CurrentRoom.Items[0]);
-        _game.CurrentRoom.Items.Clear();
-        Messages.Add(new string($"{_game.CurrentRoom.Description}"));
-        Messages.Add(new string("\nAvailable Exits"));
-        foreach (var exit in _game.CurrentRoom.Exits)
+        if (_game.CurrentRoom.Items[i].Name == itemName)
         {
-          Messages.Add(new string($"{exit.Key}"));
+          Messages.Add(new string($"You have taken {_game.CurrentRoom.Items.Count} items"));
+          _game.CurrentPlayer.Inventory.Add(_game.CurrentRoom.Items[0]);
+          _game.CurrentRoom.Items.Clear();
+          Messages.Add(new string($"{_game.CurrentRoom.Description}"));
+          Messages.Add(new string("\nAvailable Exits"));
+          foreach (var exit in _game.CurrentRoom.Exits)
+          {
+            Messages.Add(new string($"{exit.Key}"));
+          }
+          if (_game.CurrentRoom.Exits.Count == 0)
+          {
+            Messages.Add(new string($"There are no exits in this room \n"));
+          }
+          return;
         }
-        if (_game.CurrentRoom.Exits.Count == 0)
-        {
-          Messages.Add(new string($"There are no exits in this room \n"));
-        }
-        return;
       }
     }
     ///<summary>
