@@ -14,11 +14,11 @@ namespace ConsoleAdventure.Project.Models
 
 
     //NOTE Constructor made for the Rooms
-    public Room(string name, string description, bool light)
+    public Room(string name, string description)
     {
       Name = name;
       Description = description;
-      Light = light;
+      Light = false;
       Items = new List<Item>();
       Exits = new Dictionary<string, IRoom>();
     }

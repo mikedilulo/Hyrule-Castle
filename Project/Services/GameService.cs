@@ -66,7 +66,7 @@ namespace ConsoleAdventure.Project
       // }
       foreach (var item in _game.CurrentPlayer.Inventory)
       {
-        System.Console.WriteLine($"{item.Name}");
+        Messages.Add(new string($"{item.Name}"));
       }
     }
 
@@ -95,6 +95,7 @@ namespace ConsoleAdventure.Project
       if (_game.CurrentRoom.Items[0].Name == itemName)
       {
         Messages.Add(new string($"You have taken {_game.CurrentRoom.Items.Count} items"));
+        _game.CurrentPlayer.Inventory.Add(_game.CurrentRoom.Items[0]);
         _game.CurrentRoom.Items.Clear();
         Messages.Add(new string($"{_game.CurrentRoom.Description}"));
         Messages.Add(new string("\nAvailable Exits"));
@@ -108,7 +109,6 @@ namespace ConsoleAdventure.Project
         }
         return;
       }
-      _game.CurrentPlayer.Inventory.Add(_game.CurrentRoom.Items[0]);
     }
     ///<summary>
     ///No need to Pass a room since Items can only be used in the CurrentRoom
@@ -117,11 +117,15 @@ namespace ConsoleAdventure.Project
     ///</summary>
     public void UseItem(string itemName)
     {
-      if (_game.CurrentRoom.Light == true)
+      if (_game.CurrentRoom.Light)
       {
         Messages.Add(new string($"Using {itemName} lights up the room and you see a mysterious trap door to the north that will need to have some sort of key to open it. You're sword is beaming now, you are getting closer to finding the Princess!"));
         Messages.Add(new string("\nItems available:"));
         Messages.Add(new string("There are no items that you find that would be useful. You grab an apple thats sitting on the table and take a bite. While eating you hear the sounds of footsteps to the west.\n"));
+      }
+      if (!_game.CurrentRoom.Light)
+      {
+        Messages.Add(new string($"This room has no value for using a light"));
       }
     }
   }
