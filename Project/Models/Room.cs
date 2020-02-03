@@ -7,18 +7,18 @@ namespace ConsoleAdventure.Project.Models
   {
     public string Name { get; set; }
     public string Description { get; set; }
-    public bool Light { get; set; }
+    public bool Lit { get; set; }
     public List<Item> Items { get; set; }
     public Dictionary<string, IRoom> Exits { get; set; }
 
 
 
     //NOTE Constructor made for the Rooms
-    public Room(string name, string description)
+    public Room(string name, string description, bool lit)
     {
       Name = name;
       Description = description;
-      Light = false;
+      Lit = lit;
       Items = new List<Item>();
       Exits = new Dictionary<string, IRoom>();
     }
