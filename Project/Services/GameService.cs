@@ -18,6 +18,7 @@ namespace ConsoleAdventure.Project
     public void PrintMessages()
     {
       Messages.Add(new string($"{_game.CurrentRoom.Description}\n"));
+      Messages.Add(new string("Type help to see a list of commands\n"));
     }
     public void Go(string direction)
     {
@@ -26,6 +27,7 @@ namespace ConsoleAdventure.Project
         _game.CurrentRoom = _game.CurrentRoom.Exits[direction];
       }
       Messages.Add(new string($"{_game.CurrentRoom.Description}\n"));
+      Messages.Add(new string("Type help to view a list of commands\n"));
       Messages.Add(new string("The Following Exits:"));
 
 
